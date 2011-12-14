@@ -745,6 +745,10 @@ O próprio item \ref{sempreEnviar} já nos leva a imaginar que um peer que chega
 
 Experimentalmente, a política \textit{Newest first peer / Rarest first piece} foi a que nos apresentou melhor resultado. Testamos algumas mudanças como fazer com que os peers se comportassem como o publisher com alguma probabilidade, mas nenhuma delas teve um resultado mesmo parecido. Na figura \ref{vazaoPoliticaNova}, pode ser vista a evolução da vazão em função do número de pessoas no sistema.
 
+Adicionalmente, testamos esta política na presença de seeds e, para isso, tentamos determinar qual deveria ser o comportamento dos mesmos para que a vazão fosse maximizada. O melhor resultado que obtivemos veio quando havia probabilidade 0,5 de os seeds enviarem um bloco para o peer mais novo no sistema e 0,5 de enviarem para um peer escolhido aleatoriamente. Como podemos observar nas figuras \ref{vazaoPoliticaNovaComSeeds4} e \ref{vazaoPoliticaNovaComSeeds6}, caso as comparemos com as figuras \ref{vazao4b2rf} e \ref{vazao6b2rf}, vemos que houve uma pequena melhora em relação à política \textit{Random peer / Rarest first piece}, embora a diferença não seja grande. Não houve, também, mudança perceptível no efeito causado pela redução da capacidade de serviço do publisher.
+
+\pagebreak
+
 \begin{center}
 	\begin{table}[h]
 		\caption{Vazão do cenário 5 com população inicial de 50 pessoas de acordo com a política}
@@ -762,12 +766,27 @@ Experimentalmente, a política \textit{Newest first peer / Rarest first piece} f
 	\end{table}
 \end{center}
 
-\pagebreak
+\vspace{2.5cm}
 
 \begin{figure}[h]
 	\caption{Vazão da política \textit{Newest first peer / Rarest first piece} em função do número de pessoas no sistema}
 	\label{vazaoPoliticaNova}
 	\includegraphics[scale = 0.33]{./graficos/politicaNova/01.png}
+\end{figure}
+
+\clearpage
+\pagebreak
+
+\begin{figure}
+	\caption{Vazão da política \textit{Newest first peer / Rarest first piece} para o cenário 4}
+	\label{vazaoPoliticaNovaComSeeds4}
+	\includegraphics[scale = 0.33]{./graficos/politicaNova/02.png}
+\end{figure}
+
+\begin{figure}
+	\caption{Vazão da política \textit{Newest first peer / Rarest first piece} para o cenário 6}
+	\label{vazaoPoliticaNovaComSeeds6}
+	\includegraphics[scale = 0.33]{./graficos/politicaNova/03.png}
 \end{figure}
 
 \clearpage
